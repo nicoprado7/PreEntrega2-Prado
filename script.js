@@ -208,75 +208,8 @@ document.querySelector("h1").innerText = mensajeTotal;
 
 
 // Agradecer al usuario por la compra
-/* alert("¡Muchas gracias por tu compra! 🙌😁");
+alert("¡Muchas gracias por tu compra! 🙌😁");
 
 
 console.log("¡Muchas gracias por tu compra!");
-console.log("Fin del programa"); */
-
-
-
-
-// -------------------------------------------------------------------------------------------------------------------------------------
-let deseaAgregarOtroProducto;
-
-do {
-  // Preguntar al usuario si desea agregar otro producto
-  deseaAgregarOtroProducto = confirm("¿Deseas agregar otro producto?");
-
-  if (deseaAgregarOtroProducto) {
-    // Obtener una nueva categoría y producto
-    const nuevaCategoriaSeleccionada = obtenerCategoriaValida();
-    const nuevoProductoSeleccionado = obtenerProductoValido(nuevaCategoriaSeleccionada);
-
-    // Verificar si el nuevo producto seleccionado tiene el formato correcto
-    if (nuevoProductoSeleccionado && nuevoProductoSeleccionado.Producto) {
-      // Obtener el precio unitario según el nuevo producto seleccionado
-      precioUnitario = preciosPorProducto[nuevoProductoSeleccionado.Producto.toLowerCase()] || 0;
-    } else {
-      // Caso en que nuevoProductoSeleccionado no tiene el formato esperado
-      alert("Error al obtener el nuevo producto seleccionado. Por favor, inténtelo nuevamente.");
-      break;
-    }
-
-    // Solicitar al usuario que ingrese la cantidad para el nuevo producto
-    do {
-      cantidad = parseInt(prompt("Ingrese la cantidad (mayor que 0):"));
-      if (!isNaN(cantidad) && cantidad > 0) {
-        break;
-      } else {
-        alert("Cantidad no válida. Por favor, ingrese un número mayor que 0.");
-      }
-    } while (true);
-
-    // Preguntar al usuario si desea agregar el nuevo producto al carrito
-    const agregarNuevoAlCarrito = confirm(`Deseas agregar ${cantidad} ${nuevoProductoSeleccionado.Producto}(s) al carrito?`);
-
-    if (agregarNuevoAlCarrito) {
-      // Agregar el nuevo producto al carrito
-      alert(`${cantidad} ${nuevoProductoSeleccionado.Producto}(s) se han agregado al carrito.`);
-    } else {
-      alert("Nuevo producto no agregado al carrito.");
-    }
-
-    // Calcular el total de la compra para el nuevo producto
-    total = precioUnitario * cantidad;
-
-    // Mostrar el resultado para el nuevo producto
-    alert("Producto: " + nuevoProductoSeleccionado.Producto + "\nCantidad: " + cantidad + "\nTotal de la compra: $" + total);
-
-    let mensajeTotalNuevo = "Compra realizada 🛒✅ \n\nProducto = " + nuevoProductoSeleccionado.Producto + "\n" + "Cantidad = " + cantidad + (cantidad === 1 ? " Unidad" : " Unidades") + "\n" + "Total = $" + total;
-
-    console.log(mensajeTotalNuevo);
-
-    document.querySelector("h1").innerText = mensajeTotalNuevo;
-
-
-  } else {
-    // Si el usuario no desea agregar otro producto, salir del bucle
-    break;
-  }
-} while (true);
-
 console.log("Fin del programa");
-
