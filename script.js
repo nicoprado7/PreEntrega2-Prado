@@ -208,7 +208,7 @@ if (agregarAlCarrito) {
 // Título
 const titulo = "⚡ Tienda online oficial ⚡";
 
-/* 🎆🎁🛒♦️💻⚡❇️🔴 */
+
 // Mensaje total de la compra
 const mensajeTotal = `${titulo}\n\nCompra realizada 🛒✅\n\n` +
   carritoUsuario.map(item => `Producto: ${item.Producto}\nCantidad: ${item.cantidad}\nPrecio: $${item.cantidad * item.precioUnitario}\n`).join('\n') +
